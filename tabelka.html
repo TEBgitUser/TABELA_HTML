@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-    <div>
+    <div id="srodek">
         <table>
             <tr>
                 <th></th>
@@ -27,54 +27,50 @@
                 <th>H3C</th>
                 <th>H4C</th>
                 <th>H5C</th>
-                <th>H5C</th>
+                <th>H6C</th>
             </tr>
             <tr>
-                <th onmouseover="klik()">H1R</th>
-                <td style="color: red;">x</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
+                <th>H1R</th>
+                <td onmouseover="klik()" onmouseleave="schow()" style="color: red;">x</td>
+                <td> </td>
+                <td rowspan="2"> </td>
+                <td> </td>
+                <td colspan="2" rowspan="2"> </td>
             </tr>
             <tr>
                 <th>H2R</th>
-                <td>a</td>
-                <td style="color: green;">x</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
+                <td> </td>
+                <td onmouseover="klik()" onmouseleave="schow()" style="color: green;">x</td>
+                <td> </td>
             </tr>
             <tr>
                 <th>H3R</th>
-                <td>a</td>
-                <td>a</td>
-                <td style="color: cyan;">x</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
+                <td colspan="2"> </td>
+                <td onmouseover="klik()" onmouseleave="schow()" style="color: cyan;">x</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
             </tr>
             <tr>
                 <th>H4R</th>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td style="color: blueviolet;">x</td>
-                <td>a</td>
-                <td>a</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td onmouseover="klik()" onmouseleave="schow()" style="color: blueviolet;">x</td>
+                <td> </td>
+                <td> </td>
             </tr>
             <tr>
                 <th>H5R</th>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
-                <td>a</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
             </tr>
         </table>
     </div>
+    <div id="wynik"></div>
 </body>
 </html>
