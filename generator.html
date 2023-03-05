@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator osób</title>
+</head>
+<body>
+    <h1>Generator osób</h1>
+    <p>Wybierz płeć:</p>
+    <input type="radio" name="sex" id="m" value="m"><label>Mężczyzna</label>
+    <input type="radio" name="sex" id="k" value="k"><label>Kobieta</label><br>
+    <!-- <label>Podaj ile chcesz wylosować osób</label>
+    <input type="number" min="1" id="n"> --><br>
+    <button id="button" onclick="losuj()">Wylosuj osobę</button> 
+    <button onclick="przesylacz()">Prześlij dane</button>
+    <div id="wynik"></div>
+    <div id="wynik2"></div>
+    <script>
+      var imie_git="";
+      var nazwisko_git="";
+      var napis="";
+      const osoby=[];
+      var osoba={"nazwisko":"","imie":"","plec":""};
+    //   n=document.getElementById("n").value;
+      function losuj(){
+        var plec = '';
+        var radios = document.getElementsByName('sex');
+        for (var i = 0; i < radios.length; i++) {
+          if (radios[i].checked) {
+          plec = radios[i].value;
+          break;
+        }
+      } 
+        if(plec=="k"){
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost/Generator/imiona_bab', true);
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+            const plik = xhr.responseText;
+            const imie = plik.split('\n');
+            const tablica = [];
+            imie.forEach(function(line) {
+                tablica.push(line.trim());
+            });
+            min = Math.ceil(0);
+            max = Math.floor(tablica.length-1);
+            var losacz=(Math.floor(Math.random() * (max - min) + min));
+        napis=napis.concat(tablica[losacz]);
+        napis=napis.toUpperCase();
+        osoba.plec="k";
+        imie_git=(tablica[losacz])//TUTAJ ZMIENNA Z IMIENIEM
+        imie_git=imie_git.toUpperCase();
+        osoba.imie=imie_git
+        }
+    }
+    xhr.send();
+            const xhr2 = new XMLHttpRequest();
+            xhr2.open('GET', 'http://localhost/Generator/nazwiska_bab.txt', true);
+            xhr2.onreadystatechange = function() {
+            if (xhr2.readyState === 4 && xhr2.status === 200) {
+            const plik = xhr2.responseText;
+            const nazwisko = plik.split('\n');
+            const tablica2 = [];
+            nazwisko.forEach(function(line) {
+                tablica2.push(line.trim());
+            });
+            min = Math.ceil(0);
+            max = Math.floor(tablica2.length-1);
+            var losacz2=(Math.floor(Math.random() * (max - min) + min));
+        napis=napis.concat(" ")
+        nazwisko_git=""
+        nazwisko_git=tablica2[losacz2]//TUTAJ ZMIENNA Z NAZWISKIEM
+        osoba.nazwisko=nazwisko_git;
+        napis=napis.concat(tablica2[losacz2]).concat("<br>")
+        console.log(napis)
+        // console.log(osoba)
+        osoby.push(osoba)
+        osoba={"nazwisko":"","imie":"","plec":""};
+        console.log(osoby)
+        document.getElementById("wynik").innerHTML=napis+"\n"//PEŁNE IMIE I NAZWISKO
+        }
+    }
+    xhr2.send();
+        }
+        else if(plec=="m"){
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://localhost/Generator/imiona_facetow', true);
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+            const plik = xhr.responseText;
+            const imie = plik.split('\n');
+            const tablica = [];
+            imie.forEach(function(line) {
+                tablica.push(line.trim());
+            });
+            min = Math.ceil(0);
+            max = Math.floor(tablica.length-1);
+            var losacz=(Math.floor(Math.random() * (max - min) + min));
+        napis=napis.concat(tablica[losacz]);
+        napis=napis.toUpperCase();
+        osoba.plec="m";
+        imie_git=(tablica[losacz])//TUTAJ ZMIENNA Z IMIENIEM
+        imie_git=imie_git.toUpperCase();
+        osoba.imie=imie_git
+        }
+    }
+    xhr.send();
+            const xhr2 = new XMLHttpRequest();
+            xhr2.open('GET', 'http://localhost/Generator/nazwiska_facetow.txt', true);
+            xhr2.onreadystatechange = function() {
+            if (xhr2.readyState === 4 && xhr2.status === 200) {
+            const plik = xhr2.responseText;
+            const nazwisko = plik.split('\n');
+            const tablica2 = [];
+            nazwisko.forEach(function(line) {
+                tablica2.push(line.trim());
+            });
+            min = Math.ceil(0);
+            max = Math.floor(tablica2.length-1);
+            var losacz2=(Math.floor(Math.random() * (max - min) + min));
+        napis=napis.concat(" ")
+        nazwisko_git=""
+        nazwisko_git=tablica2[losacz2]//TUTAJ ZMIENNA Z NAZWISKIEM
+        osoba.nazwisko=nazwisko_git;
+        napis=napis.concat(tablica2[losacz2]).concat("<br>")
+        console.log(napis)
+        // console.log(osoba)
+        osoby.push(osoba)
+        osoba={"nazwisko":"","imie":"","plec":""};
+        console.log(osoby)
+        document.getElementById("wynik").innerHTML=napis+"\n"//PEŁNE IMIE I NAZWISKO
+        }
+    }
+    xhr2.send();
+        }
+        else{
+          alert("Chuja wybrałeś")
+        }
+      }
+function przesylacz() {
+  const osobyJson = JSON.stringify(osoby);
+  const blob = new Blob([osobyJson], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "osoby.json";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+  sendJSON();
+}
+  function sendJSON() {
+  const osobyJson = JSON.stringify(osoby);
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "przechwytywanie_pliku.php", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log("Plik JSON został wysłany na serwer.");
+    }
+  };
+  xhr.send(osobyJson);
+}
+    </script>
+</body>
+</html>
