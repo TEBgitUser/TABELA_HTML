@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelka</title>
     <link rel="stylesheet" href="style.css">
-    <script src="kod.js"></script>
+    <script src="kod.js" defer></script>
 </head>
 
 <body>
@@ -79,7 +79,7 @@
             <td>a</td>
             <td>b</td>
             <td>c</td>
-            <td onmouseover="lightOnBlue()" onmouseleave="lightOff()" id="nr_6_5"></td>
+            <td onmouseover="ON(id,'violet')" onmouseleave="ON(id,'')" id="nr_6_5"></td>
             <td>e</td>
             <td>f</td>
             <td>g</td>
@@ -90,16 +90,39 @@
 
 
 
+    <!-- <img src="image/bulboff.png" id="bulb1" onmouseover="ON(id,'violet')" onmouseleave="ON(id,'')"> -->
     <img src="image/bulboff.png" id="bulb1" onmouseover="ON(id,'violet')" onmouseleave="ON(id,'')">
     <img src="image/bulboff.png" id="bulb2" onmouseover="ON(id,'green')" onmouseleave="ON(id,'')">
     <img src="image/bulboff.png" id="bulb3" onmouseover="ON(id,'blue')" onmouseleave="ON(id,'')">
     <img src="image/bulboff.png" id="bulb4" onmouseover="ON(id,'yellow')" onmouseleave="ON(id,'')">
-    <!-- <img src="image/bulboff.png" id="bulb2" onmouseover="lightOnBlue()" onmouseleave="lightOff()">
-    <img src="image/bulboff.png" id="bulb3" onmouseover="lightOnGreen()" onmouseleave="lightOff()">
-    <img src="image/bulboff.png" id="bulb4" onmouseover="lightOnYellow()" onmouseleave="lightOff()"> -->
-    <!-- <input type="checkbox" id="chek1" checked="true" onchange="lightOn(id)" oninput="lightOn(id)"> -->
-    <div id="show1">A</div>
-    <div id="show2">B</div>
+    <!-- <img src="image/bulboff.png" id="bulb1" onmouseover="document.getElementById('bulb1').src='image/bulbvl.png'" onmouseleave="lightOff()"> -->
+    <!-- <img src="image/bulboff.png" id="bulb3" onmouseover="lightOnGreen()" onmouseleave="lightOff()"> -->
+    <!-- <img src="image/bulboff.png" id="bulb4" onmouseover="lightOnYellow()" onmouseleave="lightOff()"> -->
+
+    <!-- <div id="show1">A</div>
+    <div id="show2">B</div> -->
+    <table>
+        <tr>
+            <th>KOLOR</th>
+            <th>CHECK</th>
+        </tr>
+        <tr>
+            <td onmouseover="ON('bulb1','violet')" onmouseleave="ON('bulb1')">FIOLET</td>
+            <td> <input type="checkbox" id="chek1" onchange="ON_img(id,'bulb1','violet')"></td>
+        </tr>
+        <tr>
+            <td onmouseover="ON('bulb2','green')" onmouseleave="ON('bulb2')">GREEN</td>
+            <td> <input type="checkbox" id="chek2" onchange="ON_img(id,'bulb2','green')"></td>
+        </tr>
+        <tr>
+            <td onmouseover="ON('bulb3','blue')" onmouseleave="ON('bulb3')">BLUE</td>
+            <td> <input type="checkbox" id="chek3" onchange="ON_img(id,'bulb3','blue')"></td>
+        </tr>
+        <tr>
+            <td onmouseover="ON('bulb4','yellow')" onmouseleave="ON('bulb4')">YELLOW</td>
+            <td> <input type="checkbox" id="chek4" onchange="ON_img(id,'bulb4','yellow')"></td>
+        </tr>
+    </table>
 </body>
 
 </html>
