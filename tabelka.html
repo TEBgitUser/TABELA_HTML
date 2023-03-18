@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelka</title>
     <link rel="stylesheet" href="style.css">
+    <script src="kod.js"></script>
 </head>
 
 <body>
@@ -78,8 +79,8 @@
             <td>a</td>
             <td>b</td>
             <td>c</td>
-            <td onmouseover="document.getElementById('bulb1').src='bulbvl.png'"
-                onmouseleave="document.getElementById('bulb1').src='bulboff.png'" style="background-color: violet
+            <td onmouseover="lightOnBlue()"
+                onmouseleave="lightOff()" style="background-color: violet
             ;"></td>
             <td>e</td>
             <td>f</td>
@@ -89,11 +90,11 @@
         </tr>
     </table>
 
-    <img src="bulboff.png" id="bulb1" onmouseover="src='bulbvl.png'" onmouseleave="src='bulboff.png'">
-    <img src="bulboff.png" id="bulb2" onmouseover="src='bulbgrn.png'" onmouseleave="src='bulboff.png'">
-    <img src="bulboff.png" id="bulb3" onmouseover="src='bulbbl.png'" onmouseleave="src='bulboff.png'">
-    <img src="bulboff.png" id="bulb4" onmouseover="src='bulbylw.png'" onmouseleave="src='bulboff.png'">
-
+    <img src="image/bulboff.png" id="bulb1" onmouseover="lightOnViolet()" onmouseleave="lightOff()">
+    <img src="image/bulboff.png" id="bulb2" onmouseover="lightOnBlue()" onmouseleave="lightOff()">
+    <img src="image/bulboff.png" id="bulb3" onmouseover="lightOnGreen()" onmouseleave="lightOff()">
+    <img src="image/bulboff.png" id="bulb4" onmouseover="lightOnYellow()" onmouseleave="lightOff()">
+<input type="checkbox" id="chek1">
 </body>
 
 </html>
