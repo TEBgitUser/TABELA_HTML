@@ -13,3 +13,7 @@ th {
 .span {
     background-color: gray;
 }
+
+img {
+   transform: scale(0.2);
+}
