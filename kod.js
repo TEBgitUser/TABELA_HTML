@@ -4,7 +4,7 @@ const BLUE = 2;
 const GREEN = 3;
 const YELLOW = 4;
 const NONE = 0;
-
+var licznik = 0;
 
 /**
  * 
@@ -46,4 +46,16 @@ function ON_img(idObiektu, idImage, nazwaKoloru) {
     } else {
         ON(idImage, '')
     }
+}
+
+function addPicture(){
+    const kolor = document.getElementById('colors').value;
+    const bulb = document.createElement('img');
+    bulb.id = 'zarowka' + licznik;
+    licznik++;
+    bulb.src = obraz[0];
+    bulb.setAttribute('onmouseover', 'ON("'+ bulb.id+'","'+kolor+'")');
+    bulb.setAttribute('onmouseleave', 'ON("'+ bulb.id+'")');
+    const zarowki = document.getElementById('zarowki');
+    zarowki.append(bulb);
 }

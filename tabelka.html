@@ -91,10 +91,12 @@
 
 
     <!-- <img src="image/bulboff.png" id="bulb1" onmouseover="ON(id,'violet')" onmouseleave="ON(id,'')"> -->
-    <img src="image/bulboff.png" id="bulb1" onmouseover="ON(id,'violet')" onmouseleave="ON(id,'')">
-    <img src="image/bulboff.png" id="bulb2" onmouseover="ON(id,'green')" onmouseleave="ON(id,'')">
-    <img src="image/bulboff.png" id="bulb3" onmouseover="ON(id,'blue')" onmouseleave="ON(id,'')">
-    <img src="image/bulboff.png" id="bulb4" onmouseover="ON(id,'yellow')" onmouseleave="ON(id,'')">
+    <div id="zarowki">
+        <img src="image/bulboff.png" id="bulb1" onmouseover="ON(id,'violet')" onmouseleave="ON(id,'')">
+        <img src="image/bulboff.png" id="bulb2" onmouseover="ON(id,'green')" onmouseleave="ON(id,'')">
+        <img src="image/bulboff.png" id="bulb3" onmouseover="ON(id,'blue')" onmouseleave="ON(id,'')">
+        <img src="image/bulboff.png" id="bulb4" onmouseover="ON(id,'yellow')" onmouseleave="ON(id,'')">
+    </div>
     <!-- <img src="image/bulboff.png" id="bulb1" onmouseover="document.getElementById('bulb1').src='image/bulbvl.png'" onmouseleave="lightOff()"> -->
     <!-- <img src="image/bulboff.png" id="bulb3" onmouseover="lightOnGreen()" onmouseleave="lightOff()"> -->
     <!-- <img src="image/bulboff.png" id="bulb4" onmouseover="lightOnYellow()" onmouseleave="lightOff()"> -->
@@ -123,6 +125,15 @@
             <td> <input type="checkbox" id="chek4" onchange="ON_img(id,'bulb4','yellow')"></td>
         </tr>
     </table>
+    <label for="kolorki">Wybierz kolor:</label>
+    <select name="kolorki" id="colors">
+        <option value="violet">FIOLET</option>
+        <option value="green">GREEN</option>
+        <option value="BLUE">BLUE</option>
+        <option value="yellow">yellow</option>
+    </select>
+    <button onclick="addPicture()">Dodaj zarowke</button>
+    
 </body>
 
 </html>
