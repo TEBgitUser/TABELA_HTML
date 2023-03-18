@@ -1,13 +1,91 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelka</title>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+    <table style="border:2px solid">
+        <tr>
+            <td></td>
+            <th>H1</th>
+            <th>H2</th>
+            <th>H3</th>
+            <th>H4</th>
+            <th>H5</th>
+            <th>H6</th>
+            <th>H7</th>
+            <th>H8</th>
+            <th>H9</th>
+            <th>H10</th>
+            <th>H11</th>
+        </tr>
+        <tr>
+            <th>H1</th>
+            <td>a</td>
+            <td colspan="2" rowspan="2" class="span">b</td>
+            <td>c</td>
+            <td colspan="3" class="span">d</td>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+        </tr>
+        <tr>
+            <th>H2</th>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td rowspan="3" class="span">e</td>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+            <td>i</td>
+        </tr>
+        <tr>
+            <th>H3</th>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+            <td>i</td>
+            <td>j</td>
+        </tr>
+        <tr>
+            <th>H4</th>
+            <td rowspan="2" colspan="2" class="span">a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+            <td>i</td>
+        </tr>
+        <tr>
+            <th>H5</th>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+            <td>i</td>
+        </tr>
+    </table>
 </body>
+
 </html>

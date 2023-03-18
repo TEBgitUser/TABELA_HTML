@@ -1,0 +1,15 @@
+table,
+th,
+td {
+    border: 5px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+}
+
+th {
+    background-color: green;
+}
+
+.span {
+    background-color: gray;
+}
