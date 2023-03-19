@@ -15,6 +15,10 @@
             text-align: center;
             margin: 0 auto;
         }
+        .image{
+            width: 10%;
+            height: 10%;
+        }
     </style>
 </head>
 <body>
@@ -33,9 +37,9 @@
                 <th>H1R</th>
                 <td onmouseover="klik()" onmouseleave="schow()" style="color: red;">x</td>
                 <td> </td>
-                <td rowspan="2"> </td>
+                <td rowspan="2" style="background-color: gray;"> </td>
                 <td> </td>
-                <td colspan="2" rowspan="2"> </td>
+                <td colspan="2" rowspan="2" style="background-color: gray;"> </td>
             </tr>
             <tr>
                 <th>H2R</th>
@@ -45,7 +49,7 @@
             </tr>
             <tr>
                 <th>H3R</th>
-                <td colspan="2"> </td>
+                <td colspan="2" style="background-color: gray;"> </td>
                 <td onmouseover="klik()" onmouseleave="schow()" style="color: cyan;">x</td>
                 <td> </td>
                 <td> </td>
@@ -72,5 +76,39 @@
         </table>
     </div>
     <div id="wynik"></div>
+    <img src="zarowa.png" class="image" id="violet">
+<img src="zarowa.png" class="image" id="green">
+<img src="zarowa.png" class="image" id="blue">
+<img src="zarowa.png" class="image" id="yellow">
+<div id="zarowki"></div>
+<table>
+    <tr>
+        <td style="background-color: green;">Kolor</td>
+        <td style="background-color: green;">Check</td>
+    </tr>
+    <tr>
+        <td>VIOLET</td>
+        <td><input type="checkbox" name="violet" id="jeden" onchange="new zarowa('violet').swiec()"></td>
+    </tr>
+    <tr>
+        <td>GREEN</td>
+        <td><input type="checkbox" name="green" id="dwa" onchange="new zarowa('green').swiec()"></td>
+    </tr>
+    <tr>
+        <td>BLUE</td>
+        <td><input type="checkbox" name="blue" id="trzy" onchange="new zarowa('blue').swiec()"></td>
+    </tr>
+    <tr>
+        <td>YELLOW</td>
+        <td><input type="checkbox" name="yellow" id="cztery" onchange="new zarowa('yellow').swiec()"></td>
+    </tr>
+</table><br>
+<label>Wybierz rodzaj żarówki</label><select name="rodzaj" id="rodzaj">
+    <option value="violet">VIOLET</option>
+    <option value="green">GREEN</option>
+    <option value="blue">BLUE</option>
+    <option value="yellow">YELLOW</option>
+</select>
+<button onclick="zarowa.dodaj()">Dodaj</button>
 </body>
 </html>
