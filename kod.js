@@ -1,4 +1,5 @@
 const obraz = ['image/bulboff.png', 'image/bulbvl.png', 'image/bulbbl.png', 'image/bulbgrn.png', 'image/bulbylw.png']
+const obraz = ['image/bulboff.png', 'image/bulbvl.png', 'image/bulbbl.png', 'image/bulbgrn.png', 'image/bulbylw.png']
 const VIOLET = 1;
 const BLUE = 2;
 const GREEN = 3;
@@ -21,7 +22,18 @@ function ON(idObiektu, nazwaKoloru='') {
 function OFF(idObiektu) {
     const obiektImageHtml = document.getElementById(idObiektu)
     obiektImageHtml.src = obraz[0];
+function ON(idObiektu, nazwaKoloru='') {
+    // document.getElementById("show1").innerHTML = idObiektu + "</br> " + nazwaKoloru + "</br> "
+    const obiektImageHtml = document.getElementById(idObiektu)
+    // document.getElementById("show2").innerHTML = getColor(nazwaKoloru) + "</br> " + nazwaKoloru + "</br> "
+    obiektImageHtml.src = getColor(nazwaKoloru);
 }
+
+function OFF(idObiektu) {
+    const obiektImageHtml = document.getElementById(idObiektu)
+    obiektImageHtml.src = obraz[0];
+}
+
 
 
 function getColor(name) {
@@ -31,9 +43,11 @@ function getColor(name) {
         case 'green': return obraz[GREEN]
         case 'yellow': return obraz[YELLOW]
         default: return obraz[NONE]
+        default: return obraz[NONE]
     }
 }
 function lightOn(id, imageName) {
+    const check = document.getElementById(id)
     const check = document.getElementById(id)
     document.getElementById("show1").innerHTML = check.checked + " " + id
 }
